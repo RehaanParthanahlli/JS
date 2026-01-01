@@ -1,0 +1,60 @@
+• JavaScript: One of the most popular and rapidly growing programming languages globally.
+
+• Front-end developer, Back-end developer, Full-stack developer: Career paths available when learning JavaScript.
+
+• Browsers: The original and primary environment where JavaScript code was designed to run.
+
+• JavaScript engine: The component within a browser (or Node) that executes JavaScript code.
+
+• V8: Google's open-source JavaScript engine, used in Chrome.
+
+• SpiderMonkey: The JavaScript engine used in Firefox.
+
+• Node: A C++ program created by Ryan Dahl in 2009 that embeds the V8 engine, allowing JavaScript code to run outside of a browser.
+
+• Runtime Environment: What browsers and Node provide for JavaScript code execution.
+
+• ECMAScript: The specification or standard that JavaScript, as a programming language, adheres to.
+
+• ECMA: The organization responsible for defining and managing the ECMAScript standards.
+
+• ES6 (ECMAScript 2015): A significant version of the specification released in 2015, which introduced many new features.
+
+• Web or mobile apps / Real-time networking applications / Games: Examples of modern applications that can be built using JavaScript.
+
+I. JAVASCRIPT (Popular, fast-growing programming language)
+
+
+• A. Definition & Career
+    ◦ Is a Programming Language
+    ◦ Conforms to the ECMAScript Specification
+    ◦ Career Roles:
+        ▪ Front-end Developer
+        ▪ Back-end Developer
+        ▪ Full-stack Developer
+
+• B. Capabilities (What it Does)
+    ◦ Originally built Interactive Web Pages in browsers
+    ◦ Modern Applications (due to large investments/community support):
+        ▪ Full-blown Web or Mobile Apps
+        ▪ Real-time Networking Applications (e.g., chats, video streaming services)
+        ▪ Games and Command-line tools
+
+• C. Execution Environments (Where it Runs)
+    ◦ Both are Runtime Environments
+    ◦ 1. Inside a Browser
+        ▪ Uses a JavaScript Engine
+        ▪ Engine Examples: SpiderMonkey (Firefox), V8 (Chrome)
+        ▪ Developer Tools: Chrome Developer Tools Console (for quick demos)
+    ◦ 2. Outside a Browser (Backend)
+        ▪ Uses Node
+        ▪ Node is a C++ program
+        ▪ Node embeds the V8 JavaScript engine
+        ▪ Node was created by Ryan Dahl in 2009
+        
+• D. Standardisation (ECMAScript)
+    ◦ ECMAScript is the standard/specification.
+    ◦ Defined by the ECMA organization.
+    ◦ First version released in 1997.
+    ◦ Annual releases started in 2015.
+    ◦ Notable Version: ECMAScript 2015 (ES6).

@@ -1,0 +1,103 @@
+Def - A runtime is the place where your code actually runs and gets executed.
+
+A JavaScript Runtime Environment is a system that -
+
+    1.Executes JavaScript code
+    2.Provides APIs that JS itself does not have
+    3.Manages memory, events, and execution
+
+
+4️⃣ Browser & Node.js — Why BOTH are Runtime Environments
+
+Browser Runtime
+
+Provided by:
+
+Chrome
+Firefox
+Edge
+
+It gives JS:
+
+window
+document
+DOM
+events
+timers
+Web APIs
+
+
+
+
+
+JavaScript the language can ONLY do:
+
+variables
+functions
+loops
+logic
+
+That’s it.
+
+JavaScript CANNOT:
+read files
+show UI
+access network
+listen to clicks
+open ports
+
+👉 The runtime gives JS its powers.
+
+
+
+
+
+Node.js Runtime
+
+Provided by:
+Node (V8 + C++ bindings)
+
+It gives JS:
+
+global
+file system (fs)
+networking (http)
+OS access
+process control
+
+So JS can control servers.
+
+
+
+
+
+Frontend JS:
+
+reacts to clicks
+manipulates DOM
+
+Backend JS:
+
+reacts to requests
+manipulates data
+returns responses
+
+Same brain. Different job.
+
+
+
+
+
+1️⃣ Brutal Truth (As promised)
+
+If you don’t separate:
+
+JavaScript (language)
+Runtime environment
+
+You will:
+
+misuse globals
+write insecure code
+struggle with backend
+Most beginners never make this distinction. You are ahead.
