@@ -484,11 +484,15 @@ function echo(input) {
 
 echo(42, "Hi");  // JS ignore "Hi" so output is 42
 
+
+
 function echo(input, greeting) {
   console.log(`${greeting} ${input}`);  
 }
 
 echo(42, "Hi");
+
+
 
 let result;              better solution as result is let object then it can be reassigned so use const
                                         down 
@@ -498,4 +502,227 @@ function echo(input, greeting) {        here
 
 echo(42, "Hi");
 console.log(result);
+
+
+
+function echo(input, greeting) {
+ return `${greeting} ${input}`;  
+}
+
+const result = echo(42, "Hi");
+console.log(result);
+*/
+
+
+
+
+
+/*  Closure- A function forms a closure when it accesses variables from its outer lexical scope.
+function handleLikePost() {
+  let likeCount = 0;
+  return function addLike() {
+    likeCount += 1;    
+    return likeCount;
+  }
+  //addLike();
+  //console.log('like count:', likeCount);
+}
+
+const like = handleLikePost();
+
+console.log(like());
+console.log(like());
+console.log(like());
+
+// Challenge: Write a countdown function with a hard-coded starting number inside closure
+// Stretch goal: Write a countdown function that can count from a provided number,
+// with a provided step
+
+// Start
+function countdown(start,step) {
+  let remainingTime=start;
+  function sub(){
+    remainingTime-=step;
+    return remainingTime;
+  }
+  return sub;
+  // write your code here
+}
+
+const countingDown = countdown(20,2);
+
+console.log(countingDown());
+console.log(countingDown());
+console.log(countingDown());
+*/
+
+
+
+
+
+/* Function with default parameter
+function convertTemperature(celsius, decimalPlaces) {
+    // celsius to fahrenheit
+  const fahrenheit = celsius * 1.8 + 32;
+  return Number(fahrenheit.toFixed(decimalPlaces));
+}
+
+console.log(convertTemperature(21, 1));
+
+
+function convertTemperature(celsius, decimalPlaces) {
+    // celsius to fahrenheit
+  decimalPlaces = decimalPlaces || 1;
+  const fahrenheit = celsius * 1.8 + 32;
+  return Number(fahrenheit.toFixed(decimalPlaces));
+}
+
+console.log(convertTemperature(21, 0));
+
+
+function convertTemperature(celsius, decimalPlaces = 1) {
+    // celsius to fahrenheit
+  const fahrenheit = celsius * 1.8 + 32;
+  return Number(fahrenheit.toFixed(decimalPlaces));
+}
+
+console.log(convertTemperature(21, 0));
+*/
+
+
+
+
+
+/* Arrow Functions ie Shorter Functions using fat arrow for conciseness and ease for classes & objects
+//Explicit return arrow functions
+const username = 'john';
+
+const capitalize = (name) => {
+  return `${name.charAt(0).toUpperCase()}${name.slice(1)}`;  
+}
+           OR
+const capitalize = name => {         //This fails incase two parameters that are (name, age) -----> Correct!
+  return `${name.charAt(0).toUpperCase()}${name.slice(1)}`;  
+}
+
+Arrow function
+= concise syntax
++ lexical this
+- no own this
+- no arguments object
+
+Implicit return Arrow Functions
+
+const username = 'john';
+
+const capitalize = name => `${name.charAt(0).toUpperCase()}${name.slice(1)}`;  
+ 
+ console.log(capitalize(username));
+
+ //Callback functions -A function becomes a callback only when it is passed as an argument to another function and that function decides when to execute it.
+ //Call back funcions will make more sense when we learn about the async functions
+ //Callback function has another name called as higher order function.
+
+ const username = 'john';
+
+const capitalize = name => `${name.charAt(0).toUpperCase()}${name.slice(1)}`;  
+ 
+function greetUser(name, callback) {
+  return callback(capitalize(name));  
+}
+
+greetUser(username, function(name) { return `Hi there, ${name}`; });
+------------OR---------------
+
+const username = 'john';
+
+const capitalize = name => `${name.charAt(0).toUpperCase()}${name.slice(1)}`;  
+ 
+function greetUser(name, callback) {
+  return callback(capitalize(name));  
+}
+
+const result = greetUser(username, (name) => {
+  return `Hi there, ${name}`;
+});
+
+console.log(result);
+-------------OR----------------
+
+const username = 'john';
+
+const capitalize = name => `${name.charAt(0).toUpperCase()}${name.slice(1)}`;  
+ 
+function greetUser(name, callback) {
+  return callback(capitalize(name));  
+}
+
+const result = greetUser(username, (name) =>`Hi there, ${name}!`;);
+
+console.log(result);
+
+ */
+
+/*
+// Challenge: Rewrite your first function from a previous challnge to be an arrow function. 
+// Stretch goal: Rewrite counting down closure in arrow function form. 
+
+
+// Challenge start 
+const splitBill = (amount, numPeople) => `Each person needs to pay ${amount / numPeople}`
+
+console.log(splitBill(10, 2));
+console.log(splitBill(10, 4));
+console.log(splitBill(10, 5));
+
+
+// Stretch goal start
+const countdown = (startingNumber, step) => {
+  let countFromNum = startingNumber + step;
+  return () => countFromNum -= step;
+}
+
+const countingDown = countdown(20, 2);
+
+console.log(countingDown());
+console.log(countingDown());
+console.log(countingDown());
+*/
+
+
+
+
+
+/*
+Partial Application - Partial application is a technique where a function is transformed into a new function by pre-filling one or more of its arguments with fixed values, while the remaining arguments are supplied later.
+function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+const addFive=add(5);
+console.log(addFive(3));   //Output is 8
+
+//Rest API to fetch
+function getData(baseUrl, route) {
+  fetch(`${baseUrl}${route}`)
+    .then(response => response.json())
+    .then(data => console.log(data));  
+}
+
+getData('https://jsonplaceholder.typicode.com', '/posts');
+getData('https://jsonplaceholder.typicode.com', '/comments');
+
+//We have to call https://jsonplaceholder.typicode.com a lot of times so instead we used concept of partial application
+
+function getData(baseUrl) {
+  return function(route) {    
+    fetch(`${baseUrl}${route}`)
+    .then(response => response.json())
+    .then(data => console.log(data));  
+  }  
+}
+
+const decideroute=getData(https://jsonplaceholder.typicode.com);
+decideroute('/Posts');c
 */

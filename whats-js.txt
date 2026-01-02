@@ -10,7 +10,7 @@
 
 • SpiderMonkey: The JavaScript engine used in Firefox.
 
-• Node: A C++ program created by Ryan Dahl in 2009 that embeds the V8 engine, allowing JavaScript code to run outside of a browser.
+• Node.js: A C++ program created by Ryan Dahl in 2009 that embeds the V8 engine, allowing JavaScript code to run outside of a browser.
 
 • Runtime Environment: What browsers and Node provide for JavaScript code execution.
 
@@ -21,6 +21,8 @@
 • ES6 (ECMAScript 2015): A significant version of the specification released in 2015, which introduced many new features.
 
 • Web or mobile apps / Real-time networking applications / Games: Examples of modern applications that can be built using JavaScript.
+
+* ES6 is a version of the ECMAScript specification that defines the syntax and behavior of JavaScript.
 
 I. JAVASCRIPT (Popular, fast-growing programming language)
 
