@@ -700,7 +700,7 @@ function add(a) {
     return a + b;
   };
 }
-const addFive=add(5);
+const addFive=add(5); // Here add follows a closure of 5 or a;
 console.log(addFive(3));   //Output is 8
 
 //Rest API to fetch
@@ -725,4 +725,40 @@ function getData(baseUrl) {
 
 const decideroute=getData(https://jsonplaceholder.typicode.com);
 decideroute('/Posts');c
+
+//Using Callback in an Partial Applications
+function getData(baseUrl) {
+  return function(route) { 
+    return function(callback) {    
+      fetch(`${baseUrl}${route}`)
+        .then(response => response.json())
+        .then(data => callback(data));  
+    }     
+  }  
+}
+
+const getSocialMediaData = getData('https://jsonplaceholder.typicode.com');
+
+const getSocialMediaPosts = getSocialMediaData('/posts');
+const getSocialMediaComments = getSocialMediaData('/comments');
+
+getSocialMediaPosts(posts => {
+  posts.forEach(post => console.log(post.title));  
+});
+
+
+//Arrow function & Callback or Higher order function in Partial Application concept
+const getData = baseUrl => route => callback =>  
+      fetch(`${baseUrl}${route}`)
+        .then(response => response.json())
+        .then(data => callback(data));  
+        
+
+const getSocialMediaData = getData('https://jsonplaceholder.typicode.com');
+
+const getSocialMediaPosts = getSocialMediaData('/posts');
+const getSocialMediaComments = getSocialMediaData('/comments');
+
+getSocialMediaPosts(posts => {
+  posts.forEach(post => console.log(post.title)); 
 */
