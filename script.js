@@ -277,7 +277,7 @@ number
 boolean
 undefined
 null
-symbol
+symbol - [] so on
 
 everything else - Object type
 
@@ -761,4 +761,139 @@ const getSocialMediaComments = getSocialMediaData('/comments');
 
 getSocialMediaPosts(posts => {
   posts.forEach(post => console.log(post.title)); 
+*/
+
+
+
+//Objects & Maps
+// Functions in objects are called methods just like Python.
+
+//Window or global or globalThis are object and those has many methods like console.log(); window.alert(); window.prompt(); window.varName;
+
+/*const object = {
+    key:value,    //Generally, key is string but value can be of any type.
+    key1:value1
+    }
+
+
+
+/*const obj = {
+  sayHi() {
+    console.log('hi')  
+  }
+}
+
+obj.sayHi();
+// objectName.methodName();
+*/
+
+/*const blueColor = '#00f';
+const orangeColor = '#f60';
+
+// variables - boxes; objects - file cabinets
+
+const colors = {
+  yellow: '#ff0',
+  blue: blueColor,
+  orange: orangeColor    
+}
+console.log(colors);*/
+
+//Shorter version of previous
+
+/*const blue = '#00f';
+const orange = '#f60';
+
+// variables - boxes; objects - file cabinets
+
+const colors = {
+  yellow: '#ff0',
+  blue,
+  orange: orange   
+}
+console.log(colors);  //{yellow: '#ff0', blue: '#00f', orange: '#f60'}
+console.log(colors.yellow);
+*/
+// Objects play a huge role in JS if there isn't a Dynamic changes time to time since hex value of color object wont changes its suited but if
+// we needed to change the value then we should'nt use objects
+
+/*Qns 1
+var bar='Undetermined';
+var restaurant="A1";
+var cafe='NaN';
+const favouritePlaces={
+    bar,
+    restaurant,
+    cafe,
+    greeting(){
+        console.log("Hi these are mine choices");
+    }
+}
+favouritePlaces.greeting();
+console.log(favouritePlaces.restaurant);*/
+
+
+
+
+//More depth for objects - 
+/*
+  undefined, null, boolean, number, string, symbol
+*/
+// primitive - passed by value
+
+// const num = 'hello world';
+// const anotherNum = 'hello world';
+// console.log(num === anotherNum);
+/*
+var key='value';
+const obj = {key:value};
+const anotherObj = {key:value}; //as earlier num gets copy of 'hello world' but there obj gets reference of keys and values.
+//If we change value from even one object the value gets changed globally as a result of pass by reference.
+//Object creates a complete unique value unlike prim. as prim creates values through pass by value.
+//Eg var txt='hi'; here txt is a copied value not reference
+// Where as const obj ={}; here obj is a pointer with a unique reference of {};
+console.log(obj === anotherObj); // False
+*/
+
+//Subtypes of objects 
+// Arrays, set, map & functions
+/*# JavaScript Objects & Subtypes vs C Structs
+
+## Objects in JavaScript
+- Base building block for non-primitive data.
+- Flexible: properties can be added/removed at runtime.
+- Can hold both data and functions (methods).
+- Serve as foundation for Abstract Data Types (ADTs).
+
+## Subtypes of Objects
+1. Array → Ordered list, indexed by numbers.
+   Example: [10, 20, 30]
+2. Set → Unique collection, no duplicates.
+   Example: new Set([1,2,2,3]) → {1,2,3}
+3. Map → Key-value pairs, keys can be any type.
+   Example: myMap.set("name","Rehaan")
+4. Function → Callable object, can also have properties.
+   Example: greet.language = "English"
+
+## Comparison with C Structs
+- Similarity: Both group related data → ADTs.
+- Differences:
+  - C struct → fixed fields, strongly typed, no methods.
+  - JS object → dynamic, can include methods, supports inheritance.
+- Analogy: JS objects are like "structs on steroids".
+
+## Big Picture
+- Object is the parent type.
+- Arrays, Sets, Maps, Functions are specialized children.
+- Objects in JS = flexible, extensible ADTs compared to rigid C structs.
+*/
+
+
+//Notes 
+/*const obj = {};
+const anotherObj = obj;
+anotherObj.a = 1;
+
+console.log('obj', obj);
+console.log('another obj', anotherObj);//Same bcz of Shared references of obj.
 */

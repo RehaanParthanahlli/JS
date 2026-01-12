@@ -1,3 +1,9 @@
+- JavaScript is a language.
+- It runs inside a runtime environment (browser or Node.js), powered by a JS engine.
+
+🔹 Node.js as a Runtime Environment
+- Node.js is not a language. It’s a runtime environment built on the V8 JavaScript engine.
+
 Def - A runtime is the place where your code actually runs and gets executed.
 
 A JavaScript Runtime Environment is a system that -

@@ -1,14 +1,11 @@
 • JavaScript: One of the most popular and rapidly growing programming languages globally.
-
-• Front-end developer, Back-end developer, Full-stack developer: Career paths available when learning JavaScript.
+   - Front-end developer, Back-end developer, Full-stack developer: Career paths available when learning JavaScript.
 
 • Browsers: The original and primary environment where JavaScript code was designed to run.
 
 • JavaScript engine: The component within a browser (or Node) that executes JavaScript code.
-
-• V8: Google's open-source JavaScript engine, used in Chrome.
-
-• SpiderMonkey: The JavaScript engine used in Firefox.
+  - V8: Google's open-source JavaScript engine, used in Chrome. 
+  - SpiderMonkey: The JavaScript engine used in Firefox.
 
 • Node.js: A C++ program created by Ryan Dahl in 2009 that embeds the V8 engine, allowing JavaScript code to run outside of a browser.
 

@@ -102,3 +102,56 @@ Avoid var to prevent hoisting/shadowing issues.
    - Closures: functions that capture variables from outer scope
    - Arrow functions: concise syntax, useful for short-circuiting
    - Advanced: partial application, more readable parameter handling
+   - Follows -
+      1. 🔹 Arrow Functions
+         - Explicit return
+         const fn = (param) => { return value; }
+         - Implicit return
+         const fn = param => value;
+         - Properties:
+         + Concise syntax
+         + Lexical this
+         - No own this
+         - No arguments object
+
+      2. 🔹 Callback Functions / Higher-Order Functions
+         - Function passed as argument, executed later
+         - Example:
+         function greetUser(name, callback) {
+            return callback(capitalize(name));
+         }
+
+      3. 🔹 Partial Application
+         - Pre-filling arguments to create new functions
+         - Example:
+         function add(a) {
+            return function(b) { return a + b; };
+         }
+         const addFive = add(5);
+
+      4. 🔹 Partial Application with REST API
+         - Basic fetch
+         - Using partial application to fix baseUrl
+         - Example:
+         const api = getData('https://jsonplaceholder.typicode.com');
+         api('/posts');
+
+      5. 🔹 Partial Application + Callback
+         - Nested closures with callback
+         - Arrow function version:
+         const getData = baseUrl => route => callback =>
+            fetch(`${baseUrl}${route}`)
+               .then(res => res.json())
+               .then(data => callback(data));
+
+==========================
+📝 Key Takeaways
+==========================
+- Arrow functions simplify syntax and handle `this` differently.
+- Callbacks are functions passed into other functions, often used in async code.
+- Higher-order functions take/return functions.
+- Closures allow functions to "remember" outer scope variables.
+- Partial application helps reuse functions by fixing some arguments.
+- Combining arrow functions, callbacks, and partial application makes code concise and powerful.
+
+
