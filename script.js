@@ -849,7 +849,7 @@ var key='value';
 const obj = {key:value};
 const anotherObj = {key:value}; //as earlier num gets copy of 'hello world' but there obj gets reference of keys and values.
 //If we change value from even one object the value gets changed globally as a result of pass by reference.
-//Object creates a complete unique value unlike prim. as prim creates values through pass by value.
+//Object creates a complete unique value unlike prim. as primitive creates values through pass by value.
 //Eg var txt='hi'; here txt is a copied value not reference
 // Where as const obj ={}; here obj is a pointer with a unique reference of {};
 console.log(obj === anotherObj); // False
@@ -896,4 +896,153 @@ anotherObj.a = 1;
 
 console.log('obj', obj);
 console.log('another obj', anotherObj);//Same bcz of Shared references of obj.
+*/
+
+
+
+
+
+/*
+const colors = {
+  blue: "#f00",
+  orange: "#f60"
+};
+
+function getColor(key) {
+  return colors.key;
+}
+console.log(getColor('blue'));   Output is NuLL
+*/                                     
+// Why?   -----> This will literally look for a property named "key" inside colors, not the variable value.
+//Mutable 
+/*const colors = {
+  yellow: '#ff0',
+  blue: "#f00",
+  orange: "#f60"
+};
+
+// console.log(colors.yellow);
+colors.red = '#foo';
+
+colors.red = '#f00';
+
+console.log(colors);*/
+
+
+
+//How to have space for key's & Square bracket syntax.
+//Why [] ? ----> It gives capability of using keys dynamically.
+/*const colors = {
+  'yellow Color': '#ff0',
+  blue: "#f00",
+  orange: "#f60"
+};
+
+// console.log(colors.yellow);
+colors.red = '#foo';
+
+colors.red = '#f00';
+
+console.log(colors);
+console.log(colors['yellow Color']);*/
+
+
+
+//How [] gives dynammic power?
+/*const color = 'green';
+const hexCode = '#0f0';
+
+const colors = {
+  'yellow Color': '#ff0',
+  blue: "#f00",     or [color]: hexCode,
+  orange: "#f60"
+};
+
+colors[color] = hexCode;*/
+
+//Now
+/*
+function getColor(key) {
+  return colors[key];
+}
+
+console.log(getColor('green'));
+*/
+
+//Delete
+/*delete colors['yellow Color'];
+console.log(colors);
+
+delete colors.blue;
+console.log(colors);*/
+
+//Know the property named "ahead of time" ie if your key value is static use . operator else use [].
+/*
+const person = {
+  name: "Rehaan",
+  age: 25
+};
+
+console.log(person.name); // ✅ "Rehaan"
+console.log(person.age);  // ✅ 25
+
+const key = "name";
+console.log(person[key]); // ✅ "Rehaan"
+
+const dynamicKey = "age";
+console.log(person[dynamicKey]); // ✅ 25
+
+// Works with non-standard identifiers
+const obj = { "likes-coding": true };
+console.log(obj["likes-coding"]); // ✅ true
+*/
+
+
+
+//Object destructuring
+/*
+const user = {
+  name: "Reed",
+  username: "Reedbarger",
+  email: "reed@gmail.com",
+  details: {
+    title: "Programmer"  
+  }  
+};
+
+const { username, email } = user;
+          OR
+var { username, email } = user;
+
+function displayUser() {
+  console.log(`username: ${username}, email: ${email}`);   //Instead of user.username, user.email
+}
+
+displayUser()
+*/
+/*
+const user = {
+  name: "Reed",
+  username: "Reedbarger",
+  email: "reed@gmail.com",
+  details: {
+    title: "Programmer"  
+  }  
+};
+
+const { title } = user.details
+const { name } = user;          or const { name, details: { title} } = user;
+
+function displayUserBio() {
+  console.log(`${name} is a ${title}`); 
+}
+
+displayUserBio()
+*/
+/*
+function displayUserBio({ name, details: { title} }) {
+  console.log(`${name} is a ${title}`); 
+}
+
+displayUserBio(user);
 */

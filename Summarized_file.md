@@ -155,3 +155,157 @@ Avoid var to prevent hoisting/shadowing issues.
 - Combining arrow functions, callbacks, and partial application makes code concise and powerful.
 
 
+==================================================
+JavaScript Objects & Related Concepts — INDEX
+==================================================
+
+1. Objects Basics
+   - Key–value pairs
+   - Keys usually strings, values any type
+   - Used to group related data and behavior
+
+2. Methods
+   - Functions inside objects
+   - Accessed via: objectName.methodName()
+
+3. Global Objects (Runtime Provided)
+   - window (browser)
+   - global (Node.js)
+   - globalThis (universal)
+   - Expose methods like console.log(), alert(), prompt()
+
+4. Object Creation
+   - Object literal syntax {}
+   - Properties: key: value
+   - Method shorthand syntax
+
+5. ES6 Shorthand Properties
+   - Property name inferred from variable name
+   - Reduces repetition
+   - Improves readability
+
+6. Accessing Object Properties
+   - Dot notation (obj.key)
+   - Objects as “file cabinets”
+   - Variables as “boxes”
+
+7. Objects vs Dynamic Data
+   - Best for structured, stable data
+   - Not ideal for constantly changing values
+
+8. Primitive Data Types
+   - undefined, null, boolean, number, string, symbol
+   - Passed by value
+
+9. Non-Primitive Data (Objects)
+   - Passed by reference
+   - Stored as memory references
+
+10. Equality Comparison
+    - Primitives compare values
+    - Objects compare references
+    - Identical objects ≠ equal
+
+11. Pass by Value vs Pass by Reference
+    - Primitives → copied
+    - Objects → shared reference
+    - Changes affect all references
+
+12. Subtypes of Objects
+    - Array → ordered collection
+    - Set → unique values
+    - Map → key–value pairs (any key type)
+    - Function → callable object with properties
+
+13. Objects as Abstract Data Types (ADTs)
+    - Combine data and behavior
+    - Foundation for complex structures
+
+14. Comparison with C Structs
+    - C struct → fixed, typed, no methods
+    - JS object → dynamic, extensible, methods allowed
+
+15. Shared References Example
+    - Multiple variables can reference the same object
+    - Modifying one affects all
+
+16. Big Picture
+    - Objects are the backbone of JavaScript
+    - Everything non-primitive is an object
+    - Core to frontend and backend development
+==================================================
+
+
+==================================================
+JavaScript Objects — Dynamic Keys, Mutability & Destructuring (INDEX)
+==================================================
+
+1. Dot Notation vs Variable Lookup
+   - colors.key looks for literal property "key"
+   - Does NOT use the variable value
+   - Returns undefined/null if "key" property does not exist
+
+2. Bracket Notation (Dynamic Access)
+   - colors[key] uses the variable value of key
+   - Required for dynamic property access
+   - Required when key is not a valid identifier
+
+3. Why [] Exists
+   - Enables dynamic keys
+   - Allows runtime-determined property names
+   - Supports keys with spaces or special characters
+
+4. Object Mutability
+   - Objects are mutable even when declared with const
+   - Properties can be added, updated, or deleted
+   - const prevents reassignment, not mutation
+
+5. Adding & Updating Properties
+   - obj.newKey = value
+   - obj[key] = value
+   - Existing keys can be overwritten safely
+
+6. Keys with Spaces or Special Characters
+   - Must be accessed using bracket notation
+   - Example: obj["yellow Color"]
+   - Dot notation does NOT work here
+
+7. Dynamic Property Creation
+   - Use variables as keys
+   - Example:
+     const color = "green"
+     colors[color] = "#0f0"
+
+8. delete Operator
+   - Removes a property from an object
+   - Works with both dot and bracket notation
+   - Example:
+     delete obj.key
+     delete obj["key with space"]
+
+9. Rule of Thumb (Very Important)
+   - Static / known keys → use dot notation
+   - Dynamic / computed keys → use bracket notation
+
+10. Object Destructuring (Basics)
+    - Extract properties into variables
+    - Avoid repetitive obj.property access
+    - Improves readability
+
+11. Destructuring Nested Objects
+    - Access nested properties directly
+    - Example:
+      const { details: { title } } = user
+
+12. Destructuring in Function Parameters
+    - Destructure directly in function signature
+    - Clean and expressive function APIs
+    - Common in modern JS & backend code
+
+13. Big Picture
+    - Objects support dynamic behavior
+    - Bracket notation unlocks runtime flexibility
+    - Destructuring simplifies data extraction
+    - These patterns are critical for real-world JS
+
+==================================================
