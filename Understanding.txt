@@ -1,0 +1,4 @@
+We run node index.js ie node.js so that we can run the js in our own pc not in an browser.
+So Node.js is an runtime environment which we have installed inside our pc to give powers to JS.
+
+In cli just run " node file_name.js " to get ouput instead of browser.

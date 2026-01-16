@@ -1046,3 +1046,234 @@ function displayUserBio({ name, details: { title} }) {
 
 displayUserBio(user);
 */
+
+//Qns
+/*const recommendations = {
+    pancakes: 'Nowhere Man',
+    riceBowls: 'Pompoko',
+    beer: 'The Craft Beer Co.',
+    coffee: 'Coffee Roasters',
+    small_plates: 'Venetian Plates',
+    music: { 
+        traditional: 'Fiddler\'s Elbow', 
+        jazz: 'The Paris House'
+    }
+}
+const {beer,coffee,music:{traditional,jazz}}=recommendations;
+function recommend({music:{traditional,jazz}}){
+    console.log(traditional);
+    console.log(jazz);
+}
+recommend(recommendations);*/
+
+
+
+
+
+//Merge two objects 
+/*
+const user = {
+  name: "",
+  username: "",
+  phoneNumber: "",
+  email: "",
+  password: ""  
+};
+
+const newUser = {
+  username: "ReedBarger",
+  email: "reed@gmail.com",
+  password: "mypassword"  
+};
+
+console.log(Object.assign(user, newUser));*/
+
+//If you dont want to merge two things instead merge two into an empty one
+/*const user = {
+  name: "",
+  username: "",
+  phoneNumber: "",
+  email: "",
+  password: ""  
+};
+
+const newUser = {
+  username: "ReedBarger",
+  email: "reed@gmail.com",
+  password: "mypassword"  
+};
+const ob_new=Object.assign({}, user, newUser);
+console.log(ob_new);*/
+//OR
+/*const user = {
+  name: "",
+  username: "",
+  phoneNumber: "",
+  email: "",
+  password: "",
+  verified: true   // here verified is true but in assign at the end we are providing the same key with different value so assign will
+                      Override the previous value.
+  };
+
+const newUser = {
+  username: "ReedBarger",
+  email: "reed@gmail.com",
+  password: "mypassword"  
+};
+
+const createdUser = { ...user, ...newUser, verified: false };  // const createdUser={user,newUser,verified:false}; ie ... is called spread operator.
+console.log(user);*/
+
+//Maps vs Objects
+/*const nums = {
+  1: 1,
+  true: true
+};
+
+console.log(Object.keys(nums));//Here there is an implicit conversion since key of object must be strings.
+*/
+//So to solve this problem map was introduced in ES6
+
+/*const nums = {
+  1: 1,
+  true: true
+};
+
+const map1 = new Map([
+  [1, 1],
+  [true, true]  
+]);
+
+map1.set('key', 'value');
+
+console.log(...map1.keys());
+map1.forEach((value, key) => {
+  console.log(key, value);  
+});
+//Normally objects aren't ordered however the maps preserve the insertion order.
+
+const user1 = { name: "john" }
+const user2 = { name: "mary" }
+
+const secretKey1 = "asldjfalskdjf";
+const secretKey2 = "alksdjfakjsdf";
+
+const secretKeyMap = new Map([
+  [user1, secretKey1],
+  [user2, secretKey2]  
+]);
+
+const key = secretKeyMap.get(user1);
+console.log(key);*/
+//Concept of WeakMap -- Its used when we need key to object but not consider the space occupied by the object ie a key.
+/*const user1 = { name: "john" };
+const user2 = { name: "mary" };
+
+const secretKey1 = "asldjfalskdjf";
+const secretKey2 = "alksdjfakjsdf";
+
+const secretKeyMap = new WeakMap([
+  [user1, secretKey1],
+  [user2, secretKey2]  
+]);
+
+const key = secretKey*/
+// To get a number of the value we must use Object.keys(nums).length;
+//but Maps made it easy we cant just do this
+/*const userMap = new Map([
+  ["name", "john"],
+  ["verified", true]  
+]);
+
+console.log(userMap.size);*/
+
+//Map is treated just like let or const it doesnt replace var but has its own usecases.
+//This - later into depth -- Conceptual section in Scrimba
+/*const userData = { 
+  username: "Reed",
+  title: "JavaScript Programmer",
+  getBio() {
+    console.log(`User ${userData.username} is a ${this.title}`);
+  }  
+}
+const userData = { 
+  username: "Reed",
+  title: "JavaScript Programmer",
+  getBio() {
+    console.log(`User ${this.username} is a ${this.title}`);
+  },
+  askToFriend() {
+    setTimeout(function() {
+      console.log(`Would you like to friend ${this.username}?`);    // null
+    }, 2000);  
+  } 
+}
+
+userData.askToFriend();*/
+//To solve this issue 
+/*const userData = { 
+  username: "Reed",
+  title: "JavaScript Programmer",
+  getBio() {
+    console.log(`User ${this.username} is a ${this.title}`);
+  },
+  askToFriend() {
+    let that = this;
+    setTimeout(function() {
+      console.log(`Would you like to friend ${that.username}?`);   
+    }, 2000);  
+  } 
+}
+
+userData.askToFriend();*/
+
+//Better solution
+
+/*const userData = { 
+  username: "Reed",
+  title: "JavaScript Programmer",
+  getBio: () {
+    console.log(`User ${this.username} is a ${this.title}`);
+  },
+  askToFriend() {
+    setTimeout(() => {
+      console.log(`Would you like to friend ${this.username}?`);   
+    }, 2000);  
+  } 
+}
+
+userData.askToFriend();
+
+//But
+const userData = { 
+  username: "Reed",
+  title: "JavaScript Programmer",
+  getBio: () => {
+    console.log(`User ${this.username} is a ${this.title}`);
+  },
+  askToFriend() {
+    setTimeout(() => {
+      console.log(`Would you like to friend ${this.username}?`);   
+    }, 2000);  
+  } 
+}
+
+console.log(this);
+//userData.getBio();*/
+//Since normal function are dynamically bound to the object but arrow function are lexically bound to surrounding therefore this for arrow function has no meaning.
+// Difference between lexical scope and dynammic scope
+//- Lexical (static) scope: Variables are accessible only within the block or function where they are defined, and in any nested blocks/functions inside it.
+//- Dynamic scope (contrast): Variables would be resolved based on the call stack at runtime, but most modern languages (like JavaScript, Python, C, Java) use lexical scope.
+//--JS Follows Lexical scope but c follows Dynamic scope.
+
+
+
+//Array's & Sets
+//Agenda -
+//1. Flexible collections of data using Array's
+//2. Perform operations on elements of Array's
+//3. Get subsets of Array's
+//4. Transform Array's using reduce
+//5. Mold Array's using spread operator
+
+

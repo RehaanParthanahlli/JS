@@ -19,7 +19,7 @@
 
 4. Modes
    - Sloppy mode (default)
-   - Strict mode ("use strict") → catches more errors
+   - Strict mode ("use strict") → catches more errors 
 
 5. Hoisting
    - var declarations are hoisted (moved to top of scope)
@@ -47,8 +47,6 @@
 Use let/const for modern JS (block scope, safer).
 Prefer template literals for strings.
 Avoid var to prevent hoisting/shadowing issues.
-
-
 
 
 
@@ -154,9 +152,8 @@ Avoid var to prevent hoisting/shadowing issues.
 - Partial application helps reuse functions by fixing some arguments.
 - Combining arrow functions, callbacks, and partial application makes code concise and powerful.
 
-
 ==================================================
-JavaScript Objects & Related Concepts — INDEX
+Part-3
 ==================================================
 
 1. Objects Basics
@@ -235,9 +232,8 @@ JavaScript Objects & Related Concepts — INDEX
     - Core to frontend and backend development
 ==================================================
 
-
 ==================================================
-JavaScript Objects — Dynamic Keys, Mutability & Destructuring (INDEX)
+Part-4
 ==================================================
 
 1. Dot Notation vs Variable Lookup
@@ -309,3 +305,124 @@ JavaScript Objects — Dynamic Keys, Mutability & Destructuring (INDEX)
     - These patterns are critical for real-world JS
 
 ==================================================
+
+==================================================
+Part-5
+==================================================
+
+1. Merging Objects (Object.assign)
+   - Combines properties from source objects into a target object
+   - Syntax: Object.assign(target, source)
+   - Modifies the target object directly
+   - Later properties overwrite earlier ones
+
+2. Safe Object Merging (No Mutation)
+   - Use empty object as target
+   - Syntax: Object.assign({}, obj1, obj2)
+   - Prevents modification of original objects
+
+3. Object Merging Using Spread Operator (ES6)
+   - Syntax: { ...obj1, ...obj2 }
+   - Cleaner and more readable than Object.assign
+   - Later properties override earlier ones
+   - Additional properties can be overridden inline
+
+4. Property Override Rule
+   - When duplicate keys exist
+   - The last defined value wins
+   - Applies to Object.assign and spread operator
+
+5. const and Object Mutability
+   - const prevents reassignment
+   - Does NOT prevent mutation
+   - Object properties can still change
+
+6. Objects and Key Limitations
+   - Object keys are always strings
+   - Non-string keys are implicitly converted to strings
+   - Can cause key collisions
+
+7. Why Maps Were Introduced (ES6)
+   - Allow keys of ANY data type
+   - Preserve insertion order
+   - Avoid implicit string conversion
+
+8. Map Basics
+   - Created using new Map()
+   - Accepts iterable of key–value pairs
+   - Methods: set(), get(), keys(), forEach()
+   - Property: size (instead of length)
+
+9. Iterating Over Maps
+   - map.keys()
+   - map.forEach((value, key) => {})
+   - Order is preserved
+
+10. Maps vs Objects
+    - Objects: simple, unordered, string keys only
+    - Maps: ordered, any-type keys, better performance for frequent updates
+
+11. Using Objects as Map Keys
+    - Maps allow objects as keys
+    - Objects cannot reliably use objects as keys
+    - Useful for private or secret mappings
+
+12. WeakMap Concept
+    - Keys must be objects only
+    - Does NOT prevent garbage collection
+    - Automatically removes keys when objects are deleted
+    - Used for memory-sensitive or private data storage
+
+13. WeakMap Limitations
+    - No size property
+    - Not iterable
+    - Keys must be objects
+
+14. Counting Entries
+    - Objects: Object.keys(obj).length
+    - Maps: map.size
+
+15. Declaration Keywords (Important Note)
+    - Map is NOT a replacement for var / let / const
+    - Map is a data structure
+    - Use let or const to declare Maps based on use case
+
+16. Big Picture Summary
+    - Object.assign and spread merge objects
+    - Maps solve object key limitations
+    - WeakMaps enable memory-safe key-object associations
+    - Choosing between Object, Map, and WeakMap depends on use case
+
+==================================================
+
+// 1. Map
+// - Declared like let/const
+// - Does not replace var
+// - Has its own use cases
+
+// 2. Normal object method
+// - Functions inside objects bind 'this' dynamically
+// - Example: getBio() works with this.username and this.title
+
+// 3. Problem with setTimeout
+// - Regular function inside setTimeout loses 'this'
+// - Results in undefined/null for this.username
+
+// 4. Workaround with 'that = this'
+// - Capture 'this' in a variable
+// - Use 'that.username' inside setTimeout
+
+// 5. Better solution: arrow function in callback
+// - Arrow functions lexically bind 'this' from surrounding scope
+// - Keeps correct reference to object inside setTimeout
+
+// 6. Caveat: arrow functions as object methods
+// - Arrow functions do NOT bind 'this' to the object
+// - Using arrow for methods like getBio() breaks 'this'
+// - Suitable only for callbacks, not for defining object methods
+
+// 7. Difference between lexical scope and dynamic scope.
+
+// Summary:
+// - Normal functions: 'this' dynamically bound to object
+// - Arrow functions: 'this' lexically bound → good for callbacks, bad for object methods
