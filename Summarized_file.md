@@ -426,3 +426,123 @@ Part-5
 // Summary:
 // - Normal functions: 'this' dynamically bound to object
 // - Arrow functions: 'this' lexically bound → good for callbacks, bad for object methods
+
+# 📑 Arrays & Sets – Agenda & Topics
+
+## 1. Flexible Collections of Data
+- Arrays vs Objects
+- Order preservation in arrays vs objects
+- Need for known keys in objects
+
+## 2. Operations on Array Elements
+- Adding elements: push, unshift, splice
+- Removing elements: pop, shift, splice
+- Accessing length
+- Iterating: forEach, map
+
+## 3. Subsets of Arrays
+- slice (non‑mutating copy)
+- splice (mutating add/remove)
+- filter (subset based on condition)
+
+## 4. Transforming Arrays
+- map (element‑wise transformation → new array)
+- reduce (accumulation left → right)
+- reduceRight (accumulation right → left)
+- Method chaining (map + forEach)
+
+## 5. Searching & Checking
+- indexOf / lastIndexOf
+- includes
+- find / findIndex
+- some / every
+
+## 6. Sorting & Reversing
+- sort
+- reverse
+
+## 7. Flattening & Combining
+- concat
+- flat
+- flatMap
+
+## 8. String Conversions
+- join
+- toString
+
+## 9. Newer Methods
+- at
+- with
+- toReversed
+- toSorted
+- toSpliced
+- Array.from
+- Array.of
+
+## 10. Practical Examples
+- Arrays of objects (e.g., temperatures with properties)
+- Using some vs every
+- Using map to add new properties
+- Using forEach for side effects
+- Spread operator for immutability
+
+# 📑 Index of Discussed Topics
+
+**Filter**
+- `array.filter(callback)`
+- Example: filter restaurants by name or distance
+
+**String Methods**
+- Searching & Checking: `length`, `charAt`, `charCodeAt`, `codePointAt`, `includes`, `startsWith`, `endsWith`, `indexOf`, `lastIndexOf`
+- Extracting: `slice`, `substring`, `substr (deprecated)`, `at`
+- Modifying: `concat`, `repeat`, `replace`, `replaceAll`, `padStart`, `padEnd`, `trim`, `trimStart`, `trimEnd`, `toLowerCase`, `toUpperCase`
+- Splitting & Matching: `split`, `match`, `matchAll`, `search`
+- Iteration: `for...of`, direct indexing `str[0]`
+- Conversion: `valueOf`, `toString`
+
+**Object Methods**
+- Keys/Values/Entries: `Object.keys`, `Object.values`, `Object.entries`, `Object.fromEntries`
+- Property Management: `Object.assign`, `Object.create`, `Object.defineProperty`, `Object.defineProperties`
+- Immutability: `Object.freeze`, `Object.seal`, `Object.preventExtensions`
+- Checks: `Object.is`, `Object.hasOwn`, `Object.getOwnPropertyNames`, `Object.getOwnPropertySymbols`, `Object.getOwnPropertyDescriptor`, `Object.getOwnPropertyDescriptors`
+- State: `Object.isFrozen`, `Object.isSealed`, `Object.isExtensible`
+- Type Checking: `Object.prototype.toString.call(obj)`
+
+**Map Methods**
+- Basic Operations: `set`, `get`, `has`, `delete`, `clear`
+- Property: `size`
+- Iteration: `keys`, `values`, `entries`, `forEach`
+- Example: `for (const [key, value] of map) { ... }`
+
+**Reduce**
+- `array.reduce(callback, initialValue)`
+- Example: summing prices of menu items
+
+1. **Array Mutation in JavaScript**
+   - Example: `const allMenu = lunchMenu;`
+   - Concept: Reference assignment leads to mutation of the original array.
+
+2. **Pass by Reference**
+   - Explanation: Assigning one array to another variable points to the same memory reference.
+   - Effect: Changes in one variable reflect in the original array.
+
+3. **Array `push()` Method**
+   - Usage: Adds new elements to the end of an array.
+   - Example: `allMenu.push("Juice");`
+
+4. **Array `concat()` Method**
+   - Usage: Creates a new array by merging existing arrays or values.
+   - Example: `const allMenuIdeas = lunchMenuIdeas.concat('Club Sandwich');`
+   - Key Point: Does not mutate the original array.
+
+5. **Spread Operator (`...`)**
+   - Usage: Creates a shallow copy of an array.
+   - Example: `const allMenu = [...lunchMenu];`
+   - Benefit: Prevents mutation of the original array when modifying the copy.
+
+6. **Immutability in Arrays**
+   - Concept: Using `concat()` or spread operator to avoid unintended side effects.
+   - Importance: Ensures original data remains unchanged.
+
+7. **Console Logging**
+   - Usage: `console.log()` to inspect array contents and verify behavior.

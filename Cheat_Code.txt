@@ -1,0 +1,163 @@
+//Array's methods
+/*const temperatures = [69, 82, 73, 64];
+
+console.log(temperatures.indexOf(82));
+console.log(temperatures.indexOf(50) > -1);*/
+
+// -------------------- SEARCHING & CHECKING --------------------
+/*arr.indexOf(value);        // First index of value, -1 if not found
+arr.lastIndexOf(value);    // Last index of value
+arr.includes(value);       // true/false if value exists
+arr.find(callback);        // First element matching condition
+arr.findIndex(callback);   // Index of first match
+arr.some(callback);        // true if any element passes test
+arr.every(callback);       // true if all elements pass test
+
+// -------------------- ADDING & REMOVING --------------------
+arr.push(value);           // Add to end
+arr.pop();                 // Remove from end
+arr.unshift(value);        // Add to start
+arr.shift();               // Remove from start
+arr.splice(start, deleteCount, ...items); // Add/remove at index
+arr.slice(start, end);     // Copy portion (non-mutating)
+
+// -------------------- ITERATION --------------------
+arr.forEach(callback);     // Loop through elements
+arr.map(callback);         // Transform each element → new array
+arr.filter(callback);      // Keep elements that match condition
+arr.reduce(callback, init);// Accumulate values left → right
+arr.reduceRight(callback); // Accumulate values right → left
+
+// -------------------- SORTING & REVERSING --------------------
+arr.sort(compareFn);       // Sort array (default: string order)
+arr.reverse();             // Reverse order
+
+// -------------------- FLATTENING & COMBINING --------------------
+arr.concat(otherArray);    // Merge arrays
+arr.flat(depth);           // Flatten nested arrays
+arr.flatMap(callback);     // Map + flatten one level
+
+// -------------------- STRING CONVERSIONS --------------------
+arr.join(separator);       // Join into string
+arr.toString();            // Convert to string
+
+// -------------------- NEWER METHODS --------------------
+arr.at(index);             // Access by index (supports negative)
+arr.with(index, value);    // Copy array with value replaced
+arr.toReversed();          // Non-mutating reverse
+arr.toSorted(compareFn);   // Non-mutating sort
+arr.toSpliced(start, del, ...items); // Non-mutating splice
+Array.from(iterable);      // Create array from iterable
+Array.of(...items);        // Create array from arguments*/
+
+
+
+
+//String methods
+/* String Methods Cheat Sheet
+
+// Searching & Checking
+str.length
+str.charAt(index)
+str.charCodeAt(index)
+str.codePointAt(index)
+str.includes(searchString, position)
+str.startsWith(searchString, position)
+str.endsWith(searchString, length)
+str.indexOf(searchValue, fromIndex)
+str.lastIndexOf(searchValue, fromIndex)
+
+// Extracting
+str.slice(start, end)
+str.substring(start, end)
+str.substr(start, length) // deprecated
+str.at(index)
+
+// Modifying
+str.concat(str2, str3, ...)
+str.repeat(count)
+str.replace(searchValue, replaceValue)
+str.replaceAll(searchValue, replaceValue)
+str.padStart(targetLength, padString)
+str.padEnd(targetLength, padString)
+str.trim()
+str.trimStart()
+str.trimEnd()
+str.toLowerCase()
+str.toUpperCase()
+
+// Splitting & Matching
+str.split(separator, limit)
+str.match(regexp)
+str.matchAll(regexp)
+str.search(regexp)
+
+// Iteration
+for (const char of str) { ... }
+str[0] // direct indexing
+
+// Conversion
+str.valueOf()
+str.toString()
+
+
+
+// Object Methods Cheat Sheet
+
+Object.keys(obj)              // array of keys
+Object.values(obj)            // array of values
+Object.entries(obj)           // array of [key, value]
+Object.fromEntries(iterable)  // build object from entries
+
+Object.assign(target, ...sources) // copy properties
+Object.create(proto, propertiesObject) // create new object
+Object.defineProperty(obj, prop, descriptor)
+Object.defineProperties(obj, descriptors)
+
+Object.freeze(obj)            // make immutable
+Object.seal(obj)              // prevent adding/removing props
+Object.preventExtensions(obj) // prevent new props
+
+Object.is(value1, value2)     // strict equality check
+Object.hasOwn(obj, prop)      // own property check
+Object.getOwnPropertyNames(obj)
+Object.getOwnPropertySymbols(obj)
+Object.getOwnPropertyDescriptor(obj, prop)
+Object.getOwnPropertyDescriptors(obj)
+
+Object.isFrozen(obj)
+Object.isSealed(obj)
+Object.isExtensible(obj)
+
+Object.prototype.toString.call(obj) // type check
+
+
+
+// Map Methods Cheat Sheet
+
+const map = new Map();
+
+// Basic Operations
+map.set(key, value)
+map.get(key)
+map.has(key)
+map.delete(key)
+map.clear()
+
+// Properties
+map.size
+
+// Iteration
+map.keys()
+map.values()
+map.entries()
+map.forEach((value, key, map) => { ... })
+
+
+
+
+// Example
+for (const [key, value] of map) {
+  console.log(key, value);
+}
+*/

@@ -1268,6 +1268,8 @@ console.log(this);
 
 
 
+
+
 //Array's & Sets
 //Agenda -
 //1. Flexible collections of data using Array's
@@ -1277,3 +1279,318 @@ console.log(this);
 //5. Mold Array's using spread operator
 
 
+
+/*const todos = {};
+const todo1 = {
+  text: 'Wash the dishes',
+  complete: false  
+};
+const todo2 = {
+  text: 'Do laundry',
+  complete: false  
+};
+todos[2] = todo2;
+todos[1] = todo1;
+console.log(todos);*/
+
+
+
+//We must know ahead of time about the keys of object like 2 or 1 without that we can't delete in an object.
+//Order isn't preserved in an object.
+
+/*const todos_array = [];
+const todos_object = {
+  tasks:"Do JS",
+  completed:false
+}
+todos_array[0]=todos_object;
+todos_array.push("Whats an array in JS?");
+console.log(todos_array);
+let index = todos_array.length;
+console.log(`The length of Array is ${index}`);
+todos_array.pop();
+console.log(`After poping last element of Array We get this`);
+console.log(todos_array);*/
+
+/*
+const temperatures = [
+    { degrees: 69, isRecordTemp: false }, 
+    { degrees: 82, isRecordTemp: true }, 
+    { degrees: 73, isRecordTemp: false }, 
+    { degrees: 64, isRecordTemp: false }
+];
+
+console.log(temperatures.includes(50));
+//We cant use include here as includes is onyl for boolean, int and so on.
+const temperatures = [
+    { degrees: 69, isRecordTemp: false }, 
+    { degrees: 82, isRecordTemp: true }, 
+    { degrees: 73, isRecordTemp: false }, 
+    { degrees: 64, isRecordTemp: false }
+];
+
+const result = temperatures.some(temperature => temperature.isRecordTemp === true); // true / false
+console.log(result);
+Some iterates through all & then gives out if any one has passed condition but . every is opposite of this.
+ */
+
+
+
+//Map
+/*const temperatures = [
+  { degrees: 69, isRecordTemp: false },
+  { degrees: 82, isRecordTemp: true },
+  { degrees: 73, isRecordTemp: false },
+  { degrees: 64, isRecordTemp: false }
+];
+
+//const newTemps = temperatures.map(temperature => {
+//   temperature.isHigh = true; 
+//   return temperature;
+//});
+const newTemps = temperatures.map(temperature => 
+temperature.degrees > 70 ? { ...temperature,isHigh: true } : temperature      //Check for temperature.degrees > 70 ? { temperature,isHigh: true } : temperature You will notice the difference
+);
+console.log(newTemps);*/
+
+
+
+//forEach() works same as map as it allows us to iterate over the array but in map new array is created here it isn't the case.
+/*const temperatures = [
+  { degrees: 69, isRecordTemp: false },
+  { degrees: 82, isRecordTemp: true },
+  { degrees: 73, isRecordTemp: false },
+  { degrees: 64, isRecordTemp: false }
+];
+
+//const newTemps = temperatures.map(temperature => {
+//   temperature.isHigh = true; 
+//   return temperature;
+//});
+const newTemps = temperatures.map(temperature => 
+temperature.degrees > 70 ? { ...temperature,isHigh: true } : temperature      //Check for temperature.degrees > 70 ? { temperature,isHigh: true } : temperature You will notice the difference
+);
+newTemps.forEach(i=>{
+  if(i.isHigh){
+    console.log(`The temperatur ${i.degrees} was a record high last week!`);
+  }
+})
+//OR Method chaining
+//temperatures.map(temperature => 
+//temperature.degrees > 70 ? { ...temperature, isHigh: true } : temperature 
+//).forEach(temperature => {
+//   if (temperature.isHigh) {
+//     console.log(`Temperature ${temperature.degrees} was a record high last week!`);  
+//   }
+//})  
+*/
+
+//Filter 
+/*const restaurants = [
+  { name: 'Cap City Diner', milesAway: 2.2 },
+  { name: 'Chop Shop', milesAway: 4.1 },
+  { name: 'Northstar Cafe', milesAway: 0.9 },
+  { name: 'City Tavern', milesAway: 0.5 },
+  { name: 'Shake Shack', milesAway: 5.3 }
+]
+
+const results = restaurants.filter(restaurant => restaurant.name.startsWith('z'));
+const results1 = restaurants.filter(restaurant => restaurant.name.startsWith('C')&&restaurant.milesAway<2);
+console.log(results,results1);*/
+
+
+
+//Reduce
+/*const menuItems = [
+  { item: "Blue Cheese Salad", price: 8 },
+  { item: "Spicy Chicken Rigatoni", price: 18 },
+  { item: "Ponzu Glazed Salmon", price: 23 },
+  { item: "Philly Cheese Steak", price: 13 },
+  { item: "Baked Italian Chicken Sub", price: 12 },
+  { item: "Pan Seared Ribeye", price: 31 }
+];
+
+const total = menuItems.reduce((accumulator, menuItem) => {
+  return accumulator + menuItem.price;  
+}, 0);
+console.log(total);*/
+
+
+/*const Numbers=[1,2,3,4,5];
+const new_Nums=Numbers.reduce((acc,nums)=>{
+  acc.push(nums*2);
+  return acc;
+},[]);
+console.log(new_Nums);
+//OR
+const doubledNumbers = Numbers.map(num => num * 2);
+console.log(doubledNumbers);
+const greaterNumbers = Numbers.reduce((acc, num) => num > 3 ? acc.concat(num) : acc, []); //push won't work. So, concat method was used. 
+console.log(greaterNumbers);*/
+
+//Array mutation with spread operator
+/*const lunchMenu = ["Chapati",'Rice','Daal'];
+const allMenu = lunchMenu;
+allMenu.push("Juice");
+console.log(lunchMenu); //[ 'Chapati', 'Rice', 'Daal', 'Juice' ] But Why?
+//Here allMenu is passed as reference so when changes are made in allMenu actual thing is made in lunchMenu
+*/
+//Solution
+/*const lunchMenuIdeas = ['Harvest Salad', 'Southern Fried Chicken'];
+
+const allMenuIdeas = lunchMenuIdeas.concat('Club Sandwich');
+
+// allMenuIdeas.push('Club Sandwich');
+
+console.log(lunchMenuIdeas);*/
+/*const lunchMenu = ["Chapati",'Rice','Daal'];
+const allMenu = [...lunchMenu];
+allMenu.push("Juice");
+console.log(lunchMenu);*/
+
+//Non-mutating means creating a new Array and then making changes to it!
+/*const breakfastMenuIdeas = ["Buckwheat Pancakes"];
+const dinnerMenuIdeas = ["Glazed Salmon", "Meatloaf", "American Cheeseburger"];
+
+const allMenuIdeas = [
+    ...breakfastMenuIdeas, 
+    "Harvest Salad", 
+    "Southern Fried Chicken",
+    ...dinnerMenuIdeas
+];
+console.log(allMenuIdeas.push());
+const otherMenuIdeas = [...breakfastMenuIdeas, ...allMenuIdeas];
+console.log(otherMenuIdeas);
+const saladIndex = allMenuIdeas.findIndex(idea => idea === 'Harvest Salad');
+
+const finalMenuIdeas = [
+  ...allMenuIdeas.slice(0, saladIndex),
+  "Garden Salad",
+  ...allMenuIdeas.slice(saladIndex + 1)
+];
+const meatloafIndex = allMenuIdeas.findIndex(idea => idea === 'Meatloaf');
+
+const finalMenuIdeas = [
+  ...allMenuIdeas.slice(0, meatloafIndex),
+  ...allMenuIdeas.slice(meatloafIndex + 1)
+]
+console.log(finalMenuIdeas);*/
+
+/*Flexible Array Destructuring
+const finalMenuItems = [
+  "American Cheeseburger",
+  "Southern Fried Chicken",
+  "Glazed Salmon"
+];
+
+var [first, second] = finalMenuItems;
+
+var [second, first] = [first, second]; //Swapping  Let & Const won't work in this case.
+// let first = finalMenuItems[0];
+// let second = finalMenuItems[1];
+// let third = finalMenuItems[2];
+
+// console.log(first, second, third);
+console.log({ first },{ second });*/
+/*const finalMenuItems = [
+  "American Cheeseburger",
+  "Southern Fried Chicken",
+  "Glazed Salmon"
+];
+
+const [winner, ...losers] = finalMenuItems;
+
+console.log({ winner, losers });*/
+
+/*Qns
+// Challenge: 
+// In our restaurant, the chef has some favourite dishes in two different categories.
+// The chef loves all dishes that start with "S", while the rest are regular dishes
+// Use array destructoring to create arrays of the chefs favourite dishes of meat and
+// fish, and to create arrays of the regular meat and fish dishes
+
+const fishDishes = ['Salmon Rillettes', 'Grilled Tuna Provencal', 'Fish and Chips']
+const meatDishes = ['Lasagna', 'Spaghetti', 'Satay Chicken Skewers']
+
+// Modify these four variables first
+let [chefsFishDishes, ...regularFishDishes] = fishDishes;
+
+let [regularMeatDishes ,...chefsMeatDishes] = meatDishes;
+
+// console.log(chefsFishDishes);
+// console.log(regularFishDishes);
+// console.log(regularMeatDishes);
+// console.log(chefsMeatDishes);
+
+// Finally, use the spread operator to create these two arrays as well
+let chefsDishes = [...chefsMeatDishes, chefsFishDishes]
+let regularDishes = [...regularFishDishes, regularMeatDishes];
+console.log(chefsDishes);
+console.log(regularDishes);*/
+
+
+//For End loop
+/*const obj = { one: 1, two: 2 };
+
+for (const key in obj) {
+  console.log('value', obj[key]);
+}
+// Object.keys(), Object.values(), Object.entries()
+//Conversion of Object to flexible array's
+const user = {
+  name: 'John',
+  age: 29  
+};
+const keys=Object.keys(user);
+console.log(keys);
+
+
+
+const values = Object.keys(user).map(key => user[key]);
+console.log(values);
+//OR
+console.log(Object.values(user));
+console.log(Object.entries(user));
+
+
+
+const monthlyExpenses = {
+  food: 400,
+  rent: 1700,
+  insurance: 550,
+  internet: 49,
+  phone: 95  
+};
+
+const monthlyTotal = Object.values(monthlyExpenses).reduce(
+    (acc, expense) => acc + expense, 0
+);*/
+
+
+
+
+/*const users = {
+  '2345234': {
+    name: "John",
+    age: 29
+  },
+  '8798129': {
+    name: "Jane",
+    age: 42
+  },
+  '1092384': {
+    name: "Fred",
+    age: 17 
+  }
+};
+console.log(Object.entries(users));
+
+
+
+const usersOver20 = Object.entries(users).reduce((acc, [id, user]) => {
+  if (user.age > 20) {
+    acc.push({ ...user, id });
+  }  
+  return acc;
+}, []);
+console.log(usersOver20);*/
