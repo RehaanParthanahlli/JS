@@ -546,3 +546,60 @@ Part-5
 
 7. **Console Logging**
    - Usage: `console.log()` to inspect array contents and verify behavior.
+
+
+
+// OBJECTS
+const obj = { one: 1, two: 2 };
+for (const key in obj) { console.log('value', obj[key]); }
+
+const user = { name: 'John', age: 29 };
+console.log(Object.keys(user));             // ['name','age']
+console.log(Object.values(user));           // ['John',29]
+console.log(Object.entries(user));          // [['name','John'],['age',29]]
+
+const monthlyExpenses = { food: 400, rent: 1700, insurance: 550, internet: 49, phone: 95 };
+const monthlyTotal = Object.values(monthlyExpenses).reduce((acc, expense) => acc + expense, 0);
+console.log(monthlyTotal);
+
+const users = {
+  '2345234': { name: "John", age: 29 },
+  '8798129': { name: "Jane", age: 42 },
+  '1092384': { name: "Fred", age: 17 }
+};
+console.log(Object.entries(users));
+const usersOver20 = Object.entries(users).reduce((acc, [id, user]) => {
+  if (user.age > 20) acc.push({ ...user, id });
+  return acc;
+}, []);
+console.log(usersOver20);
+
+// SETS
+const customerDishes = [
+  "Chicken Wings","Fish Sandwich","Beef Stroganoff","Grilled Cheese","Blue Cheese Salad",
+  "Chicken Wings","Reuben Sandwich","Grilled Cheese","Fish Sandwich","Chicken Pot Pie",
+  "Fish Sandwich","Beef Stroganoff"
+];
+console.log(new Set([1, 1, 3]).size);              // 2
+console.log(new Set([[1], [1], [3]]).size);        // 3
+const numbersSet = new Set([[1], [2], [3]]);
+for (const num of numbersSet) console.log(num);
+const uniqueDishes = [...new Set(customerDishes)];
+console.log(uniqueDishes);
+
+// ARRAYS
+const numbers = [1, 2, 3, 4, 5];
+for (let i = 0; i < numbers.length; i++) console.log(numbers[i]);
+numbers.forEach(number => console.log(number));
+
+numbers.map(n => n * 2);                  // transform
+numbers.filter(n => n % 2 === 0);         // select
+numbers.reduce((acc, n) => acc + n, 0);   // accumulate
+numbers.some(n => n > 3);                 // any true?
+numbers.every(n => n > 0);                // all true?
+numbers.find(n => n === 3);               // first match
+numbers.findIndex(n => n === 3);          // index of match
+numbers.slice(1, 3);                      // subarray
+numbers.concat([6, 7]);                   // merge arrays
+numbers.includes(4);                      // membership
+[...numbers];                             // spread copy
