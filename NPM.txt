@@ -1,0 +1,8 @@
+npm is an installer that comes along node.js 
+npm - node package manager
+
+Role of npm
+- Package installation: It lets you install libraries, frameworks, and tools (like React, Express, Lodash).
+- Dependency management: It tracks and manages versions of packages your project depends on.
+- Scripts: You can define custom scripts (like npm run build or npm test) to automate tasks.
+- Registry access: It connects to the npm registry, which hosts millions of open-source packages.
