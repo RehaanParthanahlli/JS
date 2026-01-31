@@ -3,8 +3,19 @@
 
 //Its compile time as C/C++.
 
-//Concept of Hoisting & String Operations.
 
+//====================================================================================================================================
+//Concept of Hoisting & String Operations.
+/*console.log(x); // undefined
+var x = 10;
+
+//But JS sees it like this
+
+var x;
+console.log(x);
+x=10;           -----------------> This is how JS does Internal work and its called hoisting.*/
+//Hoisting happens all the time but the shut off its effect let or const are used
+//So, let or const make function block(Global scoped or function scoped) variable to scope blocked
 /*Naming rules -
  1) names just must contain letters, numbers, symbol $ _.
  2) first character must not be a number.
@@ -43,19 +54,44 @@ console.log("But what if we didn't define the var but just declared then output 
 console.log('Can we use \' \' instead of \" \".Also lets explore escape sequence characters.\n A new line And\t Space');
 var convention;
 console.log(`A convention for all the users called CamelCased Eg ${convention}`);
+
+const name = 'Jane';
+const Name = 'Mark';
+const NAME = 'Fred';
+
+console.log(name, Name, NAME);
+
+let firstName;
+
+// is, has will be used for boolean valued variable
+// let isModalVisible = true;
+
+// if (isModalVisible) {
+//   // do something  
+// }
+
+// let isLoading;
+// let hasPosition;
+
+const COLOR_RED = '#f00';   CAPITAL will be used for const so that other developers can understand that this value is const and cant be channged
 */
+//====================================================================================================================================
 
 
-
+//====================================================================================================================================
 //String Operations Advanced
 /*
 msg="hi";
 msg="Hi, My name is Rehaan.";
 console.log("msg");
 
-
+const threeLines = "This is a string \n that spans \r across three lines.";
+                               OR
+const threeLines = `This is a string 
+that spans across 
+three lines.
 */
-
+//====================================================================================================================================
 
 
 //====================================================================================================================================
@@ -163,7 +199,7 @@ console.log(e);        // 5 → var ignores block, leaks out
 | Block scope       | `let` and `const` are block-scoped. `var` ignores block scope and hoists to function/module scope. | Same behavior: `let` and `const` respect block scope, `var` leaks to function/global scope.                            | `let`, `const`, `var` |
 Node.js is module scoped. its module scoped and keywords are module.export or module.import .
 */
-
+//====================================================================================================================================
 
 
 //======================================================================================================================================
@@ -185,3 +221,24 @@ function myFunction(){
 //Sloppy mode
 /*x=10;//No error & its considered implicit window object.
 console.log(x);*/
+//====================================================================================================================================
+
+
+//====================================================================================================================================
+//Variable shadowing
+/*var price = 20;
+var isSale = true;
+//Variable shadowing the if statements var is being shadowed on outer elements
+if (isSale) {
+  // discount price of product
+  let price = 20 - 2;    // Use let price = 20-2; instead of var price=20-2; as let & const - block-scoped meaning that price is no longer accessed outside of if block
+                        //if price = 19; is used then since var is function scoped then outside value gets overwritten.
+  console.log('sale price', price);// if let is used output is 18 else 19
+}
+console.log('price', price-20);//if let is used inside if block then output is 0 else -1.
+*/
+//====================================================================================================================================
+/*
+
+
+*/
