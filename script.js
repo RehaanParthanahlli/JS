@@ -1,10 +1,3 @@
-//https://www.youtube.com/watch?v=upDLs1sn7g4 - What is JavaScript?
-//https://www.youtube.com/watch?v=EH3vGeqeIAo - Bckend Plan
-
-
-
-
-
 /*
 //console.log("Hello World");
 var username;
